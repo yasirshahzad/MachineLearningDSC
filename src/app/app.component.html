@@ -67,7 +67,7 @@
               <div nz-col nzSpan="12">
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>Chol.</nz-form-label>
-                  <nz-form-control [nzSpan]="15" nzHasFeedback>
+                  <nz-form-control [nzSpan]="15">
                     <input nz-input formControlName="chol" placeholder="Chol." type="number" />
                     <p nz-paragraph>The person's cholesterol measurement in mg/dl</p>
                   </nz-form-control>
@@ -76,7 +76,7 @@
               <div nz-col nzSpan="12">
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>FBS</nz-form-label>
-                  <nz-form-control [nzSpan]="15" nzHasFeedback>
+                  <nz-form-control [nzSpan]="15">
                     <input nz-input [(ngModel)]="fbs" [ngModelOptions]="{standalone: true}"
                       (ngModelChange)="changeFBS($event)" placeholder="FBS" type="number" />
                     <p nz-paragraph>The person's fasting blood sugar.</p>
@@ -112,7 +112,7 @@
               <div nz-col nzSpan="12">
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>oldpeak</nz-form-label>
-                  <nz-form-control [nzSpan]="15" nzHasFeedback>
+                  <nz-form-control [nzSpan]="15">
                     <input nz-input formControlName="oldpeak" placeholder="oldpeak" type="number" />
                     <p nz-paragraph>ST depression induced by exercise relative to rest. 'ST' relates to positions on the
                       ECG plot.</p>
@@ -153,7 +153,7 @@
               <div nz-col nzSpan="12">
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>Trest. bps</nz-form-label>
-                  <nz-form-control [nzSpan]="15" nzHasFeedback>
+                  <nz-form-control [nzSpan]="15">
                     <input nz-input formControlName="trestbps" placeholder="Trest. Bps" type="number" />
                     <p nz-paragraph>The person's resting blood pressure (mm Hg on admission to the hospital).</p>
                   </nz-form-control>
