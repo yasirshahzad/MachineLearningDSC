@@ -1,18 +1,31 @@
 <nz-layout class="layout">
   <nz-header>
-    <div class="logo" style="font-size: 28px;color: white;">Heart Disease Prediction Application</div>
+    <div class="logo" style="font-size: 28px;color: white;">
+      Heart Disease Prediction Application
+    </div>
   </nz-header>
   <nz-content>
     <div class="inner-content">
       <div *ngIf="!isLoading" nz-row>
-        <div nz-col nzSpan="12">
+        <div
+          nz-col
+          nzXs="24"
+          nzSm="24"
+          nzMd="24"
+          nzLg="24"
+          nzXl="11"
+          nzXXl="11"
+        >
           <h1 nz-title>
             Fill in the form
           </h1>
-          <p ng-paragraph>Please fill the form with accurate data. We have implemented different algorithms to calculate
-            the accurate results. Our algorithms are 90% perfect. Moreover if 3 or more than 3 results are positive then
-            there strong chances that you are going to ill. There are total 5 algorithms and their efficiency is more
-            than 90%</p>
+          <p ng-paragraph>
+            Please fill the form with accurate data. We have implemented
+            different algorithms to calculate the accurate results. Our
+            algorithms are 90% perfect. Moreover if 3 or more than 3 results are
+            positive then there strong chances that you are going to ill. There
+            are total 5 algorithms and their efficiency is more than 90%
+          </p>
           <form nz-form [formGroup]="form" (ngSubmit)="submitForm(form.value)">
             <div nz-row>
               <div nz-col nzSpan="12">
@@ -28,7 +41,13 @@
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>CA</nz-form-label>
                   <nz-form-control [nzSpan]="15">
-                    <input nz-input formControlName="ca" min="0" max="3" type="number" />
+                    <input
+                      nz-input
+                      formControlName="ca"
+                      min="0"
+                      max="3"
+                      type="number"
+                    />
                     <p nz-paragraph>The number of major vessels (0-3).</p>
                   </nz-form-control>
                 </nz-form-item>
@@ -40,8 +59,8 @@
                   <nz-form-label [nzSpan]="5" nzRequired>Sex</nz-form-label>
                   <nz-form-control [nzSpan]="15">
                     <nz-select nzPlaceHolder="Select Sex" formControlName="sex">
-                      <nz-option nzLabel="Male" nzValue=1></nz-option>
-                      <nz-option nzLabel="Female" nzValue=0></nz-option>
+                      <nz-option nzLabel="Male" nzValue="1"></nz-option>
+                      <nz-option nzLabel="Female" nzValue="0"></nz-option>
                     </nz-select>
                     <p nz-paragraph>The person's sex.</p>
                   </nz-form-control>
@@ -51,11 +70,18 @@
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>Thal</nz-form-label>
                   <nz-form-control [nzSpan]="15">
-                    <nz-select [ngModelOptions]="{standalone: true}" nzPlaceHolder=" Select a Thal" [(ngModel)]="thal"
-                      (ngModelChange)="changeThal($event)">
+                    <nz-select
+                      [ngModelOptions]="{ standalone: true }"
+                      nzPlaceHolder=" Select a Thal"
+                      [(ngModel)]="thal"
+                      (ngModelChange)="changeThal($event)"
+                    >
                       <nz-option nzLabel="Normal" nzValue="0"></nz-option>
                       <nz-option nzLabel="Fixed Defect" nzValue="1"></nz-option>
-                      <nz-option nzLabel="Reversable Defect" nzValue="2"></nz-option>
+                      <nz-option
+                        nzLabel="Reversable Defect"
+                        nzValue="2"
+                      ></nz-option>
                       <nz-option nzLabel="Other" nzValue="3"></nz-option>
                     </nz-select>
                     <p nz-paragraph>A blood disorder called thalassemia</p>
@@ -68,8 +94,15 @@
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>Chol.</nz-form-label>
                   <nz-form-control [nzSpan]="15">
-                    <input nz-input formControlName="chol" placeholder="Chol." type="number" />
-                    <p nz-paragraph>The person's cholesterol measurement in mg/dl</p>
+                    <input
+                      nz-input
+                      formControlName="chol"
+                      placeholder="Chol."
+                      type="number"
+                    />
+                    <p nz-paragraph>
+                      The person's cholesterol measurement in mg/dl
+                    </p>
                   </nz-form-control>
                 </nz-form-item>
               </div>
@@ -77,8 +110,14 @@
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>FBS</nz-form-label>
                   <nz-form-control [nzSpan]="15">
-                    <input nz-input [(ngModel)]="fbs" [ngModelOptions]="{standalone: true}"
-                      (ngModelChange)="changeFBS($event)" placeholder="FBS" type="number" />
+                    <input
+                      nz-input
+                      [(ngModel)]="fbs"
+                      [ngModelOptions]="{ standalone: true }"
+                      (ngModelChange)="changeFBS($event)"
+                      placeholder="FBS"
+                      type="number"
+                    />
                     <p nz-paragraph>The person's fasting blood sugar.</p>
                   </nz-form-control>
                 </nz-form-item>
@@ -89,19 +128,32 @@
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>Thalach</nz-form-label>
                   <nz-form-control [nzSpan]="15">
-                    <input nz-input formControlName="thalach" placeholder="thalach" type="number" />
-                    <p nz-paragraph>The person's maximum heart rate achieved.</p>
-
+                    <input
+                      nz-input
+                      formControlName="thalach"
+                      placeholder="thalach"
+                      type="number"
+                    />
+                    <p nz-paragraph>
+                      The person's maximum heart rate achieved.
+                    </p>
                   </nz-form-control>
                 </nz-form-item>
               </div>
               <div nz-col nzSpan="12">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="5" nzRequired>Ex. Angina</nz-form-label>
+                  <nz-form-label [nzSpan]="5" nzRequired
+                    >Ex. Angina</nz-form-label
+                  >
                   <nz-form-control [nzSpan]="15">
-                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Exang" formControlName="exang">
-                      <nz-option nzLabel="Yes" nzValue=1></nz-option>
-                      <nz-option nzLabel="No" nzValue=0></nz-option>
+                    <nz-select
+                      nzShowSearch
+                      nzAllowClear
+                      nzPlaceHolder="Select a Exang"
+                      formControlName="exang"
+                    >
+                      <nz-option nzLabel="Yes" nzValue="1"></nz-option>
+                      <nz-option nzLabel="No" nzValue="0"></nz-option>
                     </nz-select>
                     <p nz-paragraph>Exercise induced angina.</p>
                   </nz-form-control>
@@ -113,21 +165,43 @@
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>oldpeak</nz-form-label>
                   <nz-form-control [nzSpan]="15">
-                    <input nz-input formControlName="oldpeak" placeholder="oldpeak" type="number" />
-                    <p nz-paragraph>ST depression induced by exercise relative to rest. 'ST' relates to positions on the
-                      ECG plot.</p>
+                    <input
+                      nz-input
+                      formControlName="oldpeak"
+                      placeholder="oldpeak"
+                      type="number"
+                    />
+                    <p nz-paragraph>
+                      ST depression induced by exercise relative to rest. 'ST'
+                      relates to positions on the ECG plot.
+                    </p>
                   </nz-form-control>
                 </nz-form-item>
               </div>
               <div nz-col nzSpan="12">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="5" nzRequired>Chest Pain</nz-form-label>
+                  <nz-form-label [nzSpan]="5" nzRequired
+                    >Chest Pain</nz-form-label
+                  >
                   <nz-form-control [nzSpan]="15">
-                    <nz-select [ngModelOptions]="{standalone: true}" nzPlaceHolder=" Select a CP" [(ngModel)]="cp"
-                      (ngModelChange)="changeCP($event)">
-                      <nz-option nzLabel="Typical Angina" nzValue="0"></nz-option>
-                      <nz-option nzLabel="Atypical Angina" nzValue="1"></nz-option>
-                      <nz-option nzLabel="Non-anginal Pain" nzValue="2"></nz-option>
+                    <nz-select
+                      [ngModelOptions]="{ standalone: true }"
+                      nzPlaceHolder=" Select a CP"
+                      [(ngModel)]="cp"
+                      (ngModelChange)="changeCP($event)"
+                    >
+                      <nz-option
+                        nzLabel="Typical Angina"
+                        nzValue="0"
+                      ></nz-option>
+                      <nz-option
+                        nzLabel="Atypical Angina"
+                        nzValue="1"
+                      ></nz-option>
+                      <nz-option
+                        nzLabel="Non-anginal Pain"
+                        nzValue="2"
+                      ></nz-option>
                       <nz-option nzLabel="Asymptomatic" nzValue="3"></nz-option>
                     </nz-select>
                     <p nz-nz-paragraph>The chest pain experienced</p>
@@ -140,88 +214,154 @@
                 <nz-form-item>
                   <nz-form-label [nzSpan]="5" nzRequired>Slope</nz-form-label>
                   <nz-form-control [nzSpan]="15">
-                    <nz-select [ngModelOptions]="{standalone: true}" nzShowSearch nzAllowClear
-                      nzPlaceHolder=" Select Slope" [(ngModel)]="slope" (ngModelChange)="changeSlope($event)">
+                    <nz-select
+                      [ngModelOptions]="{ standalone: true }"
+                      nzShowSearch
+                      nzAllowClear
+                      nzPlaceHolder=" Select Slope"
+                      [(ngModel)]="slope"
+                      (ngModelChange)="changeSlope($event)"
+                    >
                       <nz-option nzLabel="Upsloping" nzValue="0"></nz-option>
                       <nz-option nzLabel="Flat" nzValue="1"></nz-option>
                       <nz-option nzLabel="Downsloping" nzValue="2"></nz-option>
                     </nz-select>
-                    <p nz-paragraph>The slope of the peak exercise ST segment.</p>
+                    <p nz-paragraph>
+                      The slope of the peak exercise ST segment.
+                    </p>
                   </nz-form-control>
                 </nz-form-item>
               </div>
               <div nz-col nzSpan="12">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="5" nzRequired>Trest. bps</nz-form-label>
+                  <nz-form-label [nzSpan]="5" nzRequired
+                    >Trest. bps</nz-form-label
+                  >
                   <nz-form-control [nzSpan]="15">
-                    <input nz-input formControlName="trestbps" placeholder="Trest. Bps" type="number" />
-                    <p nz-paragraph>The person's resting blood pressure (mm Hg on admission to the hospital).</p>
+                    <input
+                      nz-input
+                      formControlName="trestbps"
+                      placeholder="Trest. Bps"
+                      type="number"
+                    />
+                    <p nz-paragraph>
+                      The person's resting blood pressure (mm Hg on admission to
+                      the hospital).
+                    </p>
                   </nz-form-control>
                 </nz-form-item>
-
               </div>
             </div>
             <div nz-row>
               <div nz-col nzSpan="12">
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="5" nzRequired>Rest. Electro.</nz-form-label>
+                  <nz-form-label [nzSpan]="5" nzRequired
+                    >Rest. Electro.</nz-form-label
+                  >
                   <nz-form-control [nzSpan]="15">
-                    <nz-select [ngModelOptions]="{standalone: true}" nzShowSearch nzPlaceHolder=" Select a Restecg"
-                      [(ngModel)]="restecg" (ngModelChange)="restecgChange($event)">
+                    <nz-select
+                      [ngModelOptions]="{ standalone: true }"
+                      nzShowSearch
+                      nzPlaceHolder=" Select a Restecg"
+                      [(ngModel)]="restecg"
+                      (ngModelChange)="restecgChange($event)"
+                    >
                       <nz-option nzLabel="Normal" nzValue="0"></nz-option>
-                      <nz-option nzLabel="ST-T wave Abnormality" nzValue="1"></nz-option>
-                      <nz-option nzLabel="Showing probable or definite left ventricular hypertrophy by Estes' criteria"
-                        nzValue="2">
+                      <nz-option
+                        nzLabel="ST-T wave Abnormality"
+                        nzValue="1"
+                      ></nz-option>
+                      <nz-option
+                        nzLabel="Showing probable or definite left ventricular hypertrophy by Estes' criteria"
+                        nzValue="2"
+                      >
                       </nz-option>
                     </nz-select>
-                    <p nz-paragraph>Resting Electrocardiographic measurement.</p>
+                    <p nz-paragraph>
+                      Resting Electrocardiographic measurement.
+                    </p>
                   </nz-form-control>
                 </nz-form-item>
               </div>
               <div class="buttonrow" nz-col nzSpan="12">
                 <nz-form-item>
                   <nz-form-control [nzOffset]="7" [nzSpan]="12">
-                    <button nz-button nzType="primary" [disabled]="!form.valid" [nzLoading]="isLoading">Submit</button>
+                    <button
+                      nz-button
+                      nzType="primary"
+                      [disabled]="!form.valid"
+                      [nzLoading]="isLoading"
+                    >
+                      Submit
+                    </button>
                   </nz-form-control>
                 </nz-form-item>
               </div>
             </div>
           </form>
         </div>
-        <div nz-col nzSpan="1"></div>
-        <div nz-col nzSpan="11">
-          <div *ngIf="disease">
-            <h1>Results</h1>
-            <ng-container *ngIf="disease.postive > disease.negative ; else elseTemplate">
-              <p nz-text nzType="normal" style="font-size: 20px;">Result is Positive. Say thanks to GOD.
-                {{disease.positive}}/5</p>
-            </ng-container>
-            <ng-template #elseTemplate>
-              <p nz-text nzType="danger" style="font-size: 20px;">Result is negative. Go ahead and visit a doctor! </p>
-              <img style="margin-top: 10px;" src="../assets/img/graph.png" alt="graph">
-              <h2 style="margin-top:50px;">Preventions</h2>
-              <ul>
-                <li>Quit smoking.</li>
-                <li>Practice good hygiene.</li>
-                <li>Reduce and manage stress.</li>
-                <li>Maintain a healthy weight.</li>
-                <li>Eat a diet that's low in salt and saturated fat.</li>
-                <li>Exercise at least 30 minutes a day on most days of the week.</li>
-                <li> Control other health conditions, such as high blood pressure, high cholesterol and diabetes.
-                </li>
-              </ul>
-            </ng-template>
-          </div>
+        <div
+          nz-col
+          nzXs="24"
+          nzSm="24"
+          nzMd="24"
+          nzLg="24"
+          nzXl="1"
+          nzXXl="1"
+        ></div>
+        <div
+          *ngIf="disease"
+          nz-col
+          nzXs="24"
+          nzSm="24"
+          nzMd="24"
+          nzLg="24"
+          nzXl="12"
+          nzXXl="12"
+        >
+          <ng-container
+            *ngIf="disease.positive > disease.negative; else elseTemplate"
+          >
+            <p nz-text nzType="danger" style="font-size: 20px;">
+              Result is Positive. Go ahead and visit a doctor!
+              {{ disease.positive }}/5
+            </p>
+            <img
+              style="margin-top: 10px;"
+              src="../assets/img/graph.png"
+              alt="graph"
+            />
+            <h2 style="margin-top:50px;">Preventions</h2>
+            <ul>
+              <li>Quit smoking.</li>
+              <li>Practice good hygiene.</li>
+              <li>Reduce and manage stress.</li>
+              <li>Maintain a healthy weight.</li>
+              <li>Eat a diet that's low in salt and saturated fat.</li>
+              <li>
+                Exercise at least 30 minutes a day on most days of the week.
+              </li>
+              <li>
+                Control other health conditions, such as high blood pressure,
+                high cholesterol and diabetes.
+              </li>
+            </ul>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <p nz-text nzType="normal" style="font-size: 20px;">
+              Result is negative. Say thanks to GOD. {{ disease.negative }}/5
+            </p>
+          </ng-template>
         </div>
       </div>
       <div *ngIf="isLoading" class="overlay-row" nz-row>
-
         <div class="middle-line" nz-col nzSpan="12" nzOffset="6">
-          <nz-progress [nzPercent]="100" nzStatus="active">
-          </nz-progress>
+          <nz-progress [nzPercent]="100" nzStatus="active"> </nz-progress>
         </div>
       </div>
     </div>
   </nz-content>
-  <nz-footer>Heart Disease Prediction ©2020 Implement By DSC COMSATS Sahiwal</nz-footer>
+  <nz-footer
+    >Heart Disease Prediction ©2020 Implement By DSC COMSATS Sahiwal</nz-footer
+  >
 </nz-layout>

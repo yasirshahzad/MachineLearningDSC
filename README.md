@@ -1,6 +1,12 @@
-# Corona
+# Heart Disease Prediction App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+This application predicts the heart diseases of the patients. Patients who have any kind of illness in heart can submit the their some medical details on this application and our machine learning models will predict the result. If they have heart disease or not. This is the application built with 5 different machine learning models and deployed to App Engine. We have persistent models on App Engine and Flask API is used to server the content to frontend.
+
+Current Directory is Frontend and Backend codes and models can be found within `backend` directory. Frontend is build with Angular.
+
+Make sure that backend is working fine then use frontend.
+
+We have deployed our Backend on App Engine and Frontend on Firebase hosting. [Visit Live App](https://machinelearningdsc.firebaseapp.com/)
 
 ## Development server
 

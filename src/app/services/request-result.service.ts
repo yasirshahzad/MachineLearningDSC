@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { environment } from "./../../environments/environment.prod";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class RequestResultService {
-  url = "https://mlproductiondsc.appspot.com/api";
+  url = environment.API;
 
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getResult(data) {
     return this.http.post(this.url, data);

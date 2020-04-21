@@ -5,7 +5,9 @@
   margin-top: 2%;
   padding: 25px;
   position: relative !important;
-  height: 800px;
+  min-height: 800px;
+  height: 100%;
+  overflow: auto;
 }
 
 .middle-line {
